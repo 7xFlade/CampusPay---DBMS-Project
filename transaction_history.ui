@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1195</width>
+    <height>622</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Transaction History</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #525;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>1121</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FCFCFC;
+border-radius: 8px;
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>20</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;
+
+color: rgb(86, 86, 86);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>10</y>
+       <width>1061</width>
+       <height>451</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1061</width>
+        <height>1031</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <family>Helvetica Neue medium</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>0</string>
+         </property>
+         <property name="text">
+          <string>Intra Transaction Outgoing</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="outTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Helvetica Neue</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    border: 2px solid #4F3981;
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981;
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981;
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+/* Style for vertical scroll bars in QTableWidget and other scrollable widgets */
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+color: #4F3981;</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>TransactionID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>To</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Amount</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Purpose</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>PromotionId</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Time</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="font">
+          <font>
+           <family>Helvetica Neue medium</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>0</string>
+         </property>
+         <property name="text">
+          <string>Intra Transaction Incoming</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="inTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Helvetica Neue</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    border: 2px solid #4F3981;
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981;
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981;
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+/* Style for vertical scroll bars in QTableWidget and other scrollable widgets */
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>TransactionID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>From</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Amount</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Purpose</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Time</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <family>Helvetica Neue medium</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>0</string>
+         </property>
+         <property name="text">
+          <string>Bank Transaction:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="bankTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Helvetica Neue</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    border: 2px solid #4F3981;
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981;
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981;
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+/* Style for vertical scroll bars in QTableWidget and other scrollable widgets */
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>toIBAN</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Purpose</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Tax</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Time</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="font">
+          <font>
+           <family>Helvetica Neue medium</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>0</string>
+         </property>
+         <property name="text">
+          <string>Mobile Top Ups:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="topUpTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Helvetica Neue</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    border: 2px solid #4F3981;
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981;
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981;
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+/* Style for vertical scroll bars in QTableWidget and other scrollable widgets */
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>Transaction ID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Phone Number</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Amount</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Time</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="styleSheet">
+          <string>0</string>
+         </property>
+         <property name="text">
+          <string>Ticket Table:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="ticketTable">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Helvetica Neue</family>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    border: 2px solid #4F3981;
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981;
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981;
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+/* Style for vertical scroll bars in QTableWidget and other scrollable widgets */
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>EventID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>TicketID</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Cost</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Helvetica Neue medium</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Helvetica Neue&quot;&quot;medium&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Coupons:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="couponTable">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    border: 2px solid #4F3981;
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981;
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981;
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+/* Style for vertical scroll bars in QTableWidget and other scrollable widgets */
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>Coupon</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Amount</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="backButton">
+     <property name="geometry">
+      <rect>
+       <x>939</x>
+       <y>470</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans</family>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover,
+QPushButton:focus {
+	
+  color: rgb(255, 255, 255);
+  background-color: #4F3981;
+  border: 3px solid #4F3981;
+}</string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>456</x>
+       <y>9</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans</family>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Transaction History</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1195</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

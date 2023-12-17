@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminWindow</class>
+ <widget class="QMainWindow" name="AdminWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1094</width>
+    <height>793</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Admin</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #525;
+QPushButton {
+    background-color: #e74c3c; /* Tomato Red */
+    color: white;
+    border: 2px solid #c0392b; /* Darker shade of Tomato Red for border */
+    border-radius: 8px;
+    padding: 8px 16px; /* Adjust padding as needed */
+}
+
+QPushButton:hover {
+    background-color: #c0392b; /* Darker shade of Tomato Red on hover */
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #ecf0f1; /* Light Gray */
+</string>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>1041</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="styleSheet">
+        <string notr="true">background-color: #ecf0f1; /* Light Gray */
+/* Style for vertical scroll bars in QScrollArea */
+QScrollArea QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QScrollArea QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QScrollArea QScrollBar::add-line:vertical,
+QScrollArea QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollArea QScrollBar::add-page:vertical,
+QScrollArea QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* Style for horizontal scroll bars in QScrollArea */
+QScrollArea QScrollBar:horizontal {
+    background: #ecf0f1; /* Light Gray */
+    height: 12px; /* Adjust the height as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QScrollArea QScrollBar::handle:horizontal {
+    background: #bdc3c7; /* Silver */
+    min-width: 20px; /* Adjust the handle width as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QScrollArea QScrollBar::add-line:horizontal,
+QScrollArea QScrollBar::sub-line:horizontal {
+    width: 0;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+
+QScrollArea QScrollBar::add-page:horizontal,
+QScrollArea QScrollBar::sub-page:horizontal {
+    background: none;
+}
+</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1037</width>
+          <height>2038</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/* Style for QScrollArea */
+QScrollArea {
+    background: #ecf0f1; /* Light Gray */
+}
+
+/* Style for vertical and horizontal scroll bars in QScrollArea */
+QScrollBar:vertical,
+QScrollBar:horizontal {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    height: 12px; /* Adjust the height as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QScrollBar::handle:vertical,
+QScrollBar::handle:horizontal {
+    background: #bdc3c7; /* Silver */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    height: 0;
+    width: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Users: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="usersTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>50000</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981;
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981;
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981;
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+/* Style for vertical scroll bars in QTableWidget and other scrollable widgets */
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+</string>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustIgnored</enum>
+           </property>
+           <property name="columnCount">
+            <number>4</number>
+           </property>
+           <attribute name="horizontalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Email</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Balance</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Service Providers: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="spTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981;
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color:#4F3981;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color:#4F3981;
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981;
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Service</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Balance</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Events: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="eventsTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981; /* Royal purple*/
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981; /* Royal purple */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #4F3981; /* Light Gray */
+}
+
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Balance</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Donation Drives: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="ddTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981; /* Royal Blue */
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981; /* Royal Blue */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Purpose</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Balance</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Student Employers: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="employerTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981; /* Royal Blue */
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981; /* Royal Blue */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color:#4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Balance</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Coupons: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="couponTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981; /* Royal Blue */
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color:#4F3981; /* Royal Blue */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color:#4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>CouponID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Is Used</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Used By</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Amount</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Intra CampusPay Transactions: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="trTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981; /* Royal Blue */
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981; /* Royal Blue */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid#4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>Transaction ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>From</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>To</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Amount</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Purpose</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>PromotionID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Time</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Mobile Top Ups: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="topUpTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid#4F3981; /* Royal Blue */
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color:#4F3981; /* Royal Blue */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color:#4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>From</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>ToPhone</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Amount</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Time</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Promotions: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="promoTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981; /* Royal Blue */
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color:#4F3981; /* Royal Blue */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solidb #4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Description</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Amount</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>ServiceProvider</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>StartDate</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>EndDate</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>IsActive</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Category</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string> Bank Transfers: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="bankTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid#4F3981; /* Royal Blue */
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981; /* Royal Blue */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>TransactionID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>From</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>To IBAN</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Amount</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Pupose</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Tax</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Time</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Event Tickets:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="ticketsTable">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    border: 2px solid #4F3981; /* Royal Blue */
+    background-color: #ecf0f1; /* Light Gray */
+    selection-background-color: #4F3981; /* Royal Blue */
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color:#4F3981; /* Royal Blue */
+    color: white;
+    padding: 4px;
+    border: 1px solid white;
+}
+
+QTableWidget QTableWidget::item {
+    border: 1px solid #4F3981; /* Royal Blue */
+}
+
+QTableWidget QTableWidget::item:alternate {
+    background-color: #ecf0f1; /* Light Gray */
+}
+
+QTableWidget QScrollBar:vertical {
+    background: #ecf0f1; /* Light Gray */
+    width: 12px; /* Adjust the width as needed */
+    margin: 0;
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background: #bdc3c7; /* Silver */
+    min-height: 20px; /* Adjust the handle height as needed */
+    border-radius: 6px; /* Adjust the border radius for a more rounded appearance */
+}
+
+QTableWidget QScrollBar::add-line:vertical,
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QTableWidget QScrollBar::add-page:vertical,
+QTableWidget QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+           </property>
+           <column>
+            <property name="text">
+             <string>EventID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>TicketID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>BoughtBy</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Cost</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="logoutButton">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>710</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #e74c3c; /* Tomato Red */
+    color: white;
+    border: 2px solid #c0392b; /* Darker shade of Tomato Red for border */
+    border-radius: 8px;
+    padding: 8px 8px; /* Adjust padding as needed */
+}
+
+QPushButton:hover {
+    background-color: #c0392b; /* Darker shade of Tomato Red on hover */
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>Log Out</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1094</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

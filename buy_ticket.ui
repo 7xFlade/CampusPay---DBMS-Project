@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1196</width>
+    <height>705</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Buy Ticket</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #525;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">color: #000000;</string>
+   </property>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>40</y>
+      <width>961</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 16px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>20</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;Gill Sans&quot;;
+font-weight: 500;
+color: rgb(86, 86, 86);</string>
+     </property>
+     <property name="text">
+      <string>Purchase Tickets</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="buyButton">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>460</y>
+       <width>321</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+QPushButton {
+	font: 16pt &quot;Gill Sans&quot;;
+	font-weight: 500;
+    border: 3px solid #4F3981;
+}
+
+QPushButton:hover,
+QPushButton:focus {
+    color: rgb(255, 255, 255);
+    background-color: #4F3981;
+    border: 3px solid #4F3981;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Buy Ticket</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="eventName">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>170</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);
+font: 12pt &quot;Helvetica Neue&quot;;
+font-weight: 600;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>130</y>
+       <width>71</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Helvetica Neue&quot;;
+font-weight: 300;
+color: rgb(86, 86, 86);</string>
+     </property>
+     <property name="text">
+      <string>Event Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>120</y>
+       <width>101</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Helvetica Neue&quot;;
+font-weight: 300;
+color: rgb(86, 86, 86);</string>
+     </property>
+     <property name="text">
+      <string>Event ID</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="events">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>170</y>
+       <width>201</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);
+font: 12pt &quot;Helvetica Neue&quot;;
+font-weight: 600;</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Select</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>PHEC</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Music Festival</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Carnival</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Art Exhibition</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Sports Tournament </string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cultural Day</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>HUCON</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Science Fair</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Eat Habib</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Charity Gala</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>210</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Helvetica Neue&quot;;
+font-weight: 300;
+color: rgb(86, 86, 86);</string>
+     </property>
+     <property name="text">
+      <string>Ticket Price</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="price">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>260</y>
+       <width>210</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>color: rgb(0,0,0);
+font: 12pt &quot;Helvetica Neue&quot;;
+font-weight: 600;</string>
+     </property>
+     <property name="placeholderText">
+      <string>PKR 500</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="backButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>460</y>
+       <width>291</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+
+QPushButton {
+	font: 16pt &quot;Gill Sans&quot;;
+	font-weight: 500;
+    border: 3px solid #4F3981;
+}
+
+QPushButton:hover,
+QPushButton:focus {
+    color: rgb(255, 255, 255);
+    background-color: #4F3981;
+    border: 3px solid #4F3981;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="ticketPreference">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>340</y>
+       <width>191</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Select</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Soft Copy</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hard Copy</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>280</y>
+       <width>121</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Helvetica Neue&quot;;
+font-weight: 300;
+color: rgb(86, 86, 86);</string>
+     </property>
+     <property name="text">
+      <string>Ticket Preference</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>210</y>
+       <width>71</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Helvetica Neue&quot;;
+font-weight: 300;
+color: rgb(86, 86, 86);</string>
+     </property>
+     <property name="text">
+      <string>Event Date</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="errorLabel">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>330</y>
+       <width>351</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Nueue</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Helvetica Nueue&quot;;
+font-weight: bold;
+color: rgb(255,0,0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="eventDate">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>250</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0,0,0);
+font: 12pt &quot;Helvetica Neue&quot;;
+font-weight: 600;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Date</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="successLabel">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>360</y>
+       <width>351</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Nueue</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Helvetica Nueue&quot;;
+font-weight: bold;
+color: rgb(0,255,0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1196</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1197</width>
+    <height>646</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Load Money</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #525;
+QMainWindow {
+	image: url(:/stuff/money.png);
+	border-image: url(:/stuff/bg_v2.png);
+}
+QLabel {
+  color: #464d55;
+  font-weight: 600;
+}
+QLabel#heading {
+  color: #0f1925;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+QLabel#subheading {
+  color: #0f1925;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+QLineEdit {
+  background:#EAEAEA;
+  color: rgb(86, 86, 86);
+}
+
+QPushButton {
+  background-color: #00557f;
+  color: #0f1925;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #00557f;
+  padding: 5px 15px;
+  margin-top: 10px;
+  outline: 0px;
+}
+QPushButton:hover,
+QPushButton:focus {
+  background-color: #8360aa;
+  border: 3px solid #8360aa;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>1121</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 8px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>20</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 16pt &quot;MS Shell Dlg 2&quot;;
+
+color: rgb(86, 86, 86);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="loadButton">
+     <property name="geometry">
+      <rect>
+       <x>660</x>
+       <y>420</y>
+       <width>211</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton {
+  background-color: #FCFCFC;
+  color: #0f1925;
+  font-weight: 600;
+	font: 14pt &quot;Gill Sans&quot;;
+  border-radius: 8px;
+  border: 1px solid #EAEAEA;
+  padding: 5px 15px;
+  margin-top: 10px;
+  outline: 0px;
+}
+QPushButton:hover,
+QPushButton:focus {
+  background-color: #4F3981;
+  border: 3px solid #4F3981;
+color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Load Money</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="userText">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>120</y>
+       <width>351</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="acceptDrops">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Account Holder's ID</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="coupon">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>230</y>
+       <width>351</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>CPNABC123</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>80</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Neue Bold</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 75 12pt &quot;Helvetica Neue&quot; &quot;Bold&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>User ID:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>180</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Neue Bold</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 75 12pt &quot;Helvetica Neue&quot; &quot;Bold&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Coupon ID:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="balText">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>350</y>
+       <width>351</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>PKR: 0000</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>300</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Neue Bold</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 75 12pt &quot;Helvetica Neue&quot; &quot;Bold&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Current Balance:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="backButton">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>10</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton {
+  background-color: #FCFCFC;
+  color: #0f1925;
+  font-weight: 600;
+	font: 14pt &quot;Gill Sans&quot;;
+  border-radius: 8px;
+  border: 1px solid #EAEAEA;
+  padding: 5px 15px;
+  margin-top: 10px;
+  outline: 0px;
+}
+QPushButton:hover,
+QPushButton:focus {
+  background-color: #4F3981;
+  border: 3px solid #4F3981;
+color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="amountText">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>230</y>
+       <width>361</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>PKR 1000</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>180</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Neue Bold</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 75 12pt &quot;Helvetica Neue&quot; &quot;Bold&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Amount: </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="errorLabel">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>270</y>
+       <width>351</width>
+       <height>10</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>300</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Neue Bold</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 75 12pt &quot;Helvetica Neue&quot; &quot;Bold&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>New Balance</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="nextBalText">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>350</y>
+       <width>361</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>PKR: ????</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>80</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Neue Bold</family>
+       <pointsize>12</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 75 12pt &quot;Helvetica Neue&quot; &quot;Bold&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Account Type:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="accText">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>120</y>
+       <width>361</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Account Type</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>10</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans</family>
+       <pointsize>24</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 75 24pt &quot;Gill Sans&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Load Funds</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="verifyButton">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>420</y>
+       <width>210</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton {
+  background-color: #FCFCFC;
+  color: #0f1925;
+  font-weight: 600;
+	font: 14pt &quot;Gill Sans&quot;;
+  border-radius: 8px;
+  border: 1px solid #EAEAEA;
+  padding: 5px 15px;
+  margin-top: 10px;
+  outline: 0px;
+}
+QPushButton:hover,
+QPushButton:focus {
+  background-color: #4F3981;
+  border: 3px solid #4F3981;
+color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Verify</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="verifiedLabel">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>390</y>
+       <width>351</width>
+       <height>10</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1197</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

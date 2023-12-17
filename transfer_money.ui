@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1181</width>
+    <height>646</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Transfer Money</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #525;
+QMainWindow {
+	image: url(:/stuff/money.png);
+	border-image: url(:/stuff/bg_v2.png);
+	
+}
+QLabel {
+  color: #464d55;
+  font-weight: 600;
+}
+QLabel#heading {
+  color: #0f1925;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+QLabel#subheading {
+  color: #0f1925;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+QLineEdit {
+  background: transparent;
+  color: rgb(86, 86, 86);
+  border-bottom: 1px solid rgb(86, 86, 86);
+}
+
+QPushButton {
+  background-color: #00557f;
+  color: #0f1925;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #00557f;
+  padding: 5px 15px;
+  margin-top: 10px;
+  outline: 0px;
+}
+QPushButton:hover,
+QPushButton:focus {
+  background-color: #8360aa;
+  border: 3px solid #8360aa;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>40</y>
+      <width>981</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 8px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="sendButton">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>450</y>
+       <width>191</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	border: 3px solid #4F3981;;
+}
+
+QPushButton:hover,
+QPushButton:focus {
+	
+  color: rgb(255, 255, 255);
+  background-color: #4F3981;;
+  border: 3px solid #4F3981;;
+}</string>
+     </property>
+     <property name="text">
+      <string>Send Money</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="recipient">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>120</y>
+       <width>281</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>ID</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="amountText">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>211</y>
+       <width>281</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>PKR 1000</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="recipientLabel">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>80</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Recipient User ID:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="amountLabel">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>172</y>
+       <width>81</width>
+       <height>14</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Amount:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="balText">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>211</y>
+       <width>301</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>PKR: 0000</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="balLabel">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>172</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Current Balance:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="promoLabel">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>250</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PromotionID</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="promoText">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>302</y>
+       <width>551</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Enter the Promotion ID to avail discount (only when transferring to Service Provider accounts)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="backButton">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>450</y>
+       <width>191</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	border: 3px solid #4F3981;;
+}
+
+QPushButton:hover,
+QPushButton:focus {
+	
+  color: rgb(255, 255, 255);
+  background-color: #4F3981;;
+  border: 3px solid #4F3981;;
+}</string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="recipientType">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>130</y>
+       <width>301</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color : rgb(37, 37, 37);
+background:#EAEAEA;</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>User</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mobile Topup</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>ServiceProvider</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Event</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>DonationDrive</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bank</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="typeLabel">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>80</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select Recipient Account Type</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>10</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Fund Transfer</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="purposeLabel">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>350</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Purpose:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="purposeText">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>400</y>
+       <width>551</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#EAEAEA;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Purpose of transaction (Optional)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="userError">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>150</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color : rgb(252, 0, 6)</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="successLabel">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>430</y>
+       <width>541</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1181</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
